@@ -63,7 +63,7 @@ Only tested on Debian Jessie. Feel free to open issues.
        ```cd ~/my_coding_workspace
         git clone https://github.com/Chocobozzz/OpenVPN-Admin openvpn-admin
         cd openvpn-admin
-        ./install.sh /var/www www-data www-data```
+        ./install.sh /var/www www-data www-data
 
   * Setup the web server (Apache, NGinx...) to serve the web application.
   * Create the admin of the web application by visiting `http://your-installation/index.php?installation`
