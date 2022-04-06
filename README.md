@@ -25,9 +25,9 @@ Administrate its OpenVPN with a web interface (logs visualisations, users managi
 ### Debian 8 Jessie
 
 ````
-# apt-get install openvpn apache2 php5-mysql mysql-server php5 nodejs unzip git wget sed npm curl
-# npm install -g bower
-# ln -s /usr/bin/nodejs /usr/bin/node
+apt-get install openvpn apache2 php5-mysql mysql-server php5 nodejs unzip git wget sed npm curl
+npm install -g bower
+ln -s /usr/bin/nodejs /usr/bin/node
 ````
 
 ### Debian 9 Stretch
@@ -35,9 +35,9 @@ Administrate its OpenVPN with a web interface (logs visualisations, users managi
 In order to install `npm`, [stretch-backports need to be added to your sources.list](https://backports.debian.org/Instructions/#index2h2).
 
 ````
-# apt-get install -t stretch-backports npm nodejs
-# apt-get install openvpn apache2 php-mysql mysql-server php-zip php unzip git wget sed curl
-# npm install -g bower
+apt-get install -t stretch-backports npm nodejs
+apt-get install openvpn apache2 php-mysql mysql-server php-zip php unzip git wget sed curl
+npm install -g bower
 ````
 
 ### CentOS 7
