@@ -43,11 +43,11 @@ npm install -g bower
 ### CentOS 7
 
 ````
-# yum install epel-release
-# yum install openvpn httpd php-mysql mariadb-server php nodejs unzip git wget sed npm
-# npm install -g bower
-# systemctl enable mariadb
-# systemctl start mariadb
+yum install epel-release
+yum install openvpn httpd php-mysql mariadb-server php nodejs unzip git wget sed npm
+npm install -g bower
+systemctl enable mariadb
+systemctl start mariadb
 ````
 
 ### Other distribution... (PR welcome)
@@ -60,10 +60,10 @@ Only tested on Debian Jessie. Feel free to open issues.
 
   * Setup OpenVPN and the web application:
 
-        $ cd ~/my_coding_workspace
-        $ git clone https://github.com/Chocobozzz/OpenVPN-Admin openvpn-admin
-        $ cd openvpn-admin
-        # ./install.sh /var/www www-data www-data
+       ```cd ~/my_coding_workspace
+        git clone https://github.com/Chocobozzz/OpenVPN-Admin openvpn-admin
+        cd openvpn-admin
+        ./install.sh /var/www www-data www-data```
 
   * Setup the web server (Apache, NGinx...) to serve the web application.
   * Create the admin of the web application by visiting `http://your-installation/index.php?installation`
