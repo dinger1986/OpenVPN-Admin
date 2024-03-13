@@ -6,7 +6,7 @@ if [ "$EUID" -ne 0 ]; then
   exit
 fi
 
-apt -get update
+apt-get update
 
 # Ensure there are enought arguments
 if [ "$#" -ne 3 ]; then
