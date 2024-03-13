@@ -23,7 +23,7 @@ www=/var/www/public-html
 user=www-data
 group=www-data
 
-openvpn_admin="$www/openvpn-admin"
+openvpn_admin="/opt/openvpn-admin"
 
 base_path=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
