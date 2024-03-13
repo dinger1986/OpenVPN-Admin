@@ -1,5 +1,7 @@
 #!/bin/bash
 
+need to configure apache, iptables, install route or primary_nic=$(ip route | grep '^default' | grep -oP '(?<=dev )(\S+)') mysql setup
+
 # Ensure to be root
 if [ "$EUID" -ne 0 ]; then
   echo "Please run as root"
