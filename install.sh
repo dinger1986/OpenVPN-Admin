@@ -1,12 +1,5 @@
 #!/bin/bash
 
-print_help () {
-  echo -e "./install.sh www_basedir user group"
-  echo -e "\tbase_dir: The place where the web application will be put in"
-  echo -e "\tuser:     User of the web application"
-  echo -e "\tgroup:    Group of the web application"
-}
-
 # Ensure to be root
 if [ "$EUID" -ne 0 ]; then
   echo "Please run as root"
