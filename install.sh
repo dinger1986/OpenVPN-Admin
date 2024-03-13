@@ -9,7 +9,7 @@ fi
 apt-get update
 
 # Ensure there are the prerequisites
-for i in curl openvpn mariadb-server php unzip wget sed; do
+for i in curl openvpn mariadb-server php unzip wget sed git; do
     apt-get install -y $i
 done
 
@@ -24,6 +24,18 @@ user=www-data
 group=www-data
 
 openvpn_admin="/opt/openvpn-admin"
+
+# Check if the directory exists
+if [ ! -d "$openvpn_admin" ]; then
+    # Directory doesn't exist, so create it
+    mkdir -p "$openvpn_admin"
+    echo "Directory created at: $openvpn_admin"
+else
+    # Directory exists
+    echo "Directory already exists at: $openvpn_admin"
+fi
+
+git clone https://github.com/dinger1986/OpenVPN-Admin.git /opt/$openvpn_admin/
 
 base_path=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
