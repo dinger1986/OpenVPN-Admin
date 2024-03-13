@@ -8,32 +8,22 @@ fi
 
 apt-get update
 
-# Ensure there are enought arguments
-if [ "$#" -ne 3 ]; then
-  print_help
-  exit
-fi
-
 # Ensure there are the prerequisites
-for i in openvpn mysql php bower node unzip wget sed; do
-  which $i > /dev/null
-  if [ "$?" -ne 0 ]; then
-    echo "Miss $i Installing now"
+for i in curl openvpn mariadb-server php unzip wget sed; do
     apt-get install -y $i
-  fi
 done
+
+curl -fsSL https://deb.nodesource.com/setup_21.x | bash - &&\
+apt-get update
+apt-get install -y nodejs npm
+
+sudo npm install -g bower
 
 www=/var/www/public-html
 user=www-data
 group=www-data
 
 openvpn_admin="$www/openvpn-admin"
-
-# Check the validity of the arguments
-if [ ! -d "$www" ] ||  ! grep -q "$user" "/etc/passwd" || ! grep -q "$group" "/etc/group" ; then
-  print_help
-  exit
-fi
 
 base_path=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
