@@ -35,9 +35,9 @@ else
     echo "Directory already exists at: $openvpn_admin"
 fi
 
-cd /opt/$openvpn_admin/
+cd $openvpn_admin/
 
-git clone https://github.com/dinger1986/OpenVPN-Admin.git /opt/$openvpn_admin/
+git clone https://github.com/dinger1986/OpenVPN-Admin.git $openvpn_admin/
 
 base_path=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
