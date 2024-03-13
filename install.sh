@@ -13,6 +13,8 @@ if [ "$EUID" -ne 0 ]; then
   exit
 fi
 
+apt -get update
+
 # Ensure there are enought arguments
 if [ "$#" -ne 3 ]; then
   print_help
@@ -23,14 +25,14 @@ fi
 for i in openvpn mysql php bower node unzip wget sed; do
   which $i > /dev/null
   if [ "$?" -ne 0 ]; then
-    echo "Miss $i"
-    exit
+    echo "Miss $i Installing now"
+    apt-get install -y $i
   fi
 done
 
-www=$1
-user=$2
-group=$3
+www=/var/www/public-html
+user=www-data
+group=www-data
 
 openvpn_admin="$www/openvpn-admin"
 
